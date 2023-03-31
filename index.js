@@ -9,7 +9,11 @@ convert.addEventListener("click",()=>{
     let unitsFrom = document.getElementById('unitsFrom').value;
     if(units==="meter" && unitsFrom==="meter")
     {
-    alert('choose a different unit')  
+    alert('choose a different unit') 
+    }
+    else if(units==="inch" && unitsFrom==="inch")
+    {
+        alert('choose a different unit')
     }
     else if(units==="meter" && unitsFrom==="inch")
     {
@@ -21,4 +25,5 @@ convert.addEventListener("click",()=>{
         output=(base*39.3701)
         converted.textContent=output;
     }
+    
 })
