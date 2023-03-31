@@ -9,17 +9,25 @@
 <body>
     <form>
     <label for="base">Convert:</label>
+    <select name="units" id="unitsFrom">
+        <option value="meter" id="meter">Meter</option>
+        <option value="inch" id="inch">Inch</option>
+      <!--  <option value="US_Dollar" id="dollar">Dollar</option>-->
+    </select>
     <input type="number" id="base" name="base" required><br><br>
+   
     <label for="units">Choose a unit:</label>
 
-    <select name="units" id="units">
-    <option value="meter">Meter</option>
-    <option value="inch">Inch</option>
-    <option value="US_Dollar">Dollar</option>
+    <select name="units" id="unitsTo">
+    <option value="meter" id="meter">Meter</option>
+    <option value="inch" id="inch">Inch</option>
+   <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select>
-    
-    <label for="to">To:</label>
-    <input type="text" id="to" name="to"><br><br>
+    <button type="button" id="convert">convert</button>
+    <label for="to">To:
+        <div id="converted"></div>
+    </label> 
+   
     
     </form>
     <script src = "index.js"></script>
