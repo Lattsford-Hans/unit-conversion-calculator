@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel = "stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +17,20 @@
     </select>
     <input type="number" id="base" name="base" required><br><br>
    
-    <label for="units">Choose a unit:</label>
+    
+    <button type="button" id="convert">Convert</button> 
+    <label for="to">To</label> 
+    
 
     <select name="units" id="unitsTo">
     <option value="meter" id="meter">Meter</option>
     <option value="inch" id="inch">Inch</option>
    <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select>
-    <button type="button" id="convert">convert</button>
-    <label for="to">To:
-        <div id="converted"></div>
-    </label> 
+    <label for="units">(choose a unit):</label>
+    <div id="converted"></div>
+    
+   
    
     
     </form>
