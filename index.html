@@ -8,30 +8,40 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form id="form">
     <select name="scale" id="Scale">
-        <option value="length" id="length">Length</option>
         <option value="weight" id="weight">Weight</option>
+        <option value="length" id="length">Length</option>
         <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select><br>
     <label for="base">Convert:</label>
-    <select name="units" id="unitsFrom">
+    <select name="units" id="unitsFrom" hidden>
         <option value="meter" id="meter">Meter</option>
         <option value="inch" id="inch">Inch</option>
-      <!--  <option value="US_Dollar" id="dollar">Dollar</option>-->
+       <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
     </select>
+    
     <input type="number" id="base" name="base" required><br><br>
-   
+    <select name="units" id="unitsFromWeight" hidden>
+        <option value="kg" id="kilo">Kilo</option>
+        <option value="lbs" id="pound">Pound</option>
+    </select>
+    <select name="units" id="unitsToWeight" hidden>
+            <option value="kg" id="kilo">Kilo</option>
+            <option value="lbs" id="pound">Pound</option>
+     </select>  
     
     <button type="button" id="convert">Convert</button> 
     <label for="to">To</label> 
     
 
-    <select name="units" id="unitsTo">
+    <select name="units" id="unitsTo" hidden>
     <option value="meter" id="meter">Meter</option>
     <option value="inch" id="inch">Inch</option>
-   <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
-    </select>
+
+         
+   <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
+    </select> 
     <label for="units">(choose a unit):</label>
     <div id="converted"></div>
     

@@ -1,6 +1,8 @@
 
 const convert = document.getElementById('convert');
-console.log(convert)
+const form = document.getElementById('form');
+const scale = document.getElementById('Scale')
+
 convert.addEventListener("click",()=>{
     let base = document.getElementById('base').value;
     let units = document.getElementById('unitsTo').value;
@@ -27,3 +29,24 @@ convert.addEventListener("click",()=>{
     }
     
 })
+scale.addEventListener("change",(e)=>{
+     if(e.target.value==="length")
+     {
+        let unitsFrom = document.getElementById('unitsFrom')
+        let unitsTo = document.getElementById('unitsTo')
+        unitsFrom.hidden=false;
+        unitsTo.hidden=false;
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+     }
+     else if(e.target.value)
+     {
+        let unitsFromWeight = document.getElementById('unitsFromWeight')
+        let unitsToWeight = document.getElementById('unitsToWeight')
+        unitsFromWeight.hidden=false;
+        unitsToWeight.hidden=false;
+        unitsFrom.hidden=true;
+        unitsTo.hidden=true;
+     }
+})
+
