@@ -10,6 +10,7 @@
 <body>
     <form id="form">
     <select name="scale" id="Scale">
+        <option value="choose">Choose a Unit</option>
         <option value="weight" id="weight">Weight</option>
         <option value="length" id="length">Length</option>
         <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
@@ -20,21 +21,23 @@
         <option value="inch" id="inch">Inch</option>
        <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
     </select>
-    
-    <input type="number" id="base" name="base" required><br><br>
     <select name="units" id="unitsFromWeight" hidden>
         <option value="kg" id="kilo">Kilo</option>
         <option value="lbs" id="pound">Pound</option>
     </select>
-    <select name="units" id="unitsToWeight" hidden>
-            <option value="kg" id="kilo">Kilo</option>
-            <option value="lbs" id="pound">Pound</option>
-     </select>  
+    
+    <input type="number" id="base" name="base" required><br><br>
+    
+      
     
     <button type="button" id="convert">Convert</button> 
     <label for="to">To</label> 
     
-
+    <select name="units" id="unitsToWeight" hidden>
+        <option value="kg" id="kilo">Kilo</option>
+        <option value="lbs" id="pound">Pound</option>
+    </select>
+    
     <select name="units" id="unitsTo" hidden>
     <option value="meter" id="meter">Meter</option>
     <option value="inch" id="inch">Inch</option>
