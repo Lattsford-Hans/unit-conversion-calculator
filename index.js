@@ -68,6 +68,10 @@ let calculation=(value)=>{
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
      {
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
         let unitsFrom = document.getElementById('unitsFrom')
         let unitsTo = document.getElementById('unitsTo')
         unitsFrom.hidden=false;
@@ -81,6 +85,10 @@ scale.addEventListener("change",(e)=>{
      }
      else if(e.target.value==="weight")
      {
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
         let unitsFromWeight = document.getElementById('unitsFromWeight')
         let unitsToWeight = document.getElementById('unitsToWeight')
         unitsFromWeight.hidden=false;
@@ -93,6 +101,10 @@ scale.addEventListener("change",(e)=>{
         })
      }
      else{
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
         let unitsFrom = document.getElementById('unitsFrom')
         let unitsTo = document.getElementById('unitsTo')
         let unitsFromWeight = document.getElementById('unitsFromWeight')
