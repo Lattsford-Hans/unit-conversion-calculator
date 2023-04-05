@@ -59,10 +59,7 @@ let calculation=(value)=>{
             converted.textContent=output;
         }
     }
-    
-    
-
-    
+ 
     
 }
 scale.addEventListener("change",(e)=>{
