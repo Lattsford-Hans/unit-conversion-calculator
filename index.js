@@ -9,9 +9,12 @@ convert.addEventListener("click",()=>{
     let converted = document.getElementById('converted');
     let output=0;
     let unitsFrom = document.getElementById('unitsFrom').value;
+    let unitsWeight = document.getElementById('unitsToWeight').value;
+    let weightUnit = document.getElementById('unitsFromWeight').value;
+
     if(units==="meter" && unitsFrom==="meter")
     {
-    alert('choose a different unit') 
+    alert('Similar units') 
     }
     else if(units==="inch" && unitsFrom==="inch")
     {
@@ -27,7 +30,26 @@ convert.addEventListener("click",()=>{
         output=(base*39.3701)
         converted.textContent=output;
     }
-    
+    else if(unitsWeight==="kg" && weightUnit==="kg")
+    {
+        alert('choose a different unit')
+    }
+    else if(unitsWeight==="lbs" && weightUnit==="lbs")
+    {
+        console.log("hi")
+
+    }
+    else if(unitsWeight==="kg" && weightUnit==="lbs")
+    {
+        output=(base*2.20462)
+        converted.textContent=output;
+    }
+    else if(unitsWeight==="lbs" && weightUnit==="kg")
+    {
+        output=(base*0.453592)
+        converted.textContent=output;
+        console.log()
+    }
 })
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
