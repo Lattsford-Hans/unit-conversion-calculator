@@ -79,7 +79,7 @@ scale.addEventListener("change",(e)=>{
             
         })
      }
-     else if(e.target.value)
+     else if(e.target.value==="weight")
      {
         let unitsFromWeight = document.getElementById('unitsFromWeight')
         let unitsToWeight = document.getElementById('unitsToWeight')
@@ -92,5 +92,16 @@ scale.addEventListener("change",(e)=>{
             
         })
      }
+     else{
+        let unitsFrom = document.getElementById('unitsFrom')
+        let unitsTo = document.getElementById('unitsTo')
+        let unitsFromWeight = document.getElementById('unitsFromWeight')
+        let unitsToWeight = document.getElementById('unitsToWeight')
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+        unitsFrom.hidden=true;
+        unitsTo.hidden=true;
+     }
+
 })
 
