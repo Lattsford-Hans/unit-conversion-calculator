@@ -1,9 +1,7 @@
-
 const convert = document.getElementById('convert');
 const form = document.getElementById('form');
 const scale = document.getElementById('Scale')
-
-
+/*Function to convert from one value to another*/
 let calculation=(value)=>{
     if (value==="length"){
         let base = document.getElementById('base').value;
@@ -40,13 +38,9 @@ let calculation=(value)=>{
             output=(base*2.20462)
             converted.textContent=output;
         }
-    }
-    
-    
-
-    
-    
+    }  
 }
+/*Listening on the unit chooser drop down to select different units to convert*/
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
      {
@@ -65,6 +59,7 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=true;
         from =  unitsFrom.value;
         to = unitsTo.value;
+        /*logic to disable convert button if inputs are similar*/
         unitsFrom.addEventListener("change",(e)=>{
             from=e.target.value;
             //console.log(x);
@@ -114,6 +109,7 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=true;
         let fromValueWeight = unitsFromWeight.value;
         let toValueWeight = unitsToWeight.value;
+        /*logic to disable convert button if inputs are similar*/
         unitsFromWeight.addEventListener("change",(e)=>{
             fromValueWeight=e.target.value;
             if(fromValueWeight===toValueWeight)
