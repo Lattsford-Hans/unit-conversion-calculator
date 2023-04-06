@@ -10,16 +10,7 @@ let calculation=(value)=>{
         let converted = document.getElementById('converted');
         let output=0;
         let unitsFrom = document.getElementById('unitsFrom').value;
-
-        if(units==="meter" && unitsFrom==="meter")
-        {
-        alert('Similar units') 
-        }
-        else if(units==="inch" && unitsFrom==="inch")
-        {
-        alert('choose a different unit')
-        }
-        else if(units==="meter" && unitsFrom==="inch")
+        if(units==="meter" && unitsFrom==="inch")
         {
             output=(base*0.0254)
             converted.textContent=output;
@@ -37,18 +28,9 @@ let calculation=(value)=>{
         let output=0;
         let unitsWeight = document.getElementById('unitsToWeight').value;
         let weightUnit = document.getElementById('unitsFromWeight').value;
+        if(unitsWeight==="kg" && weightUnit==="lbs")
+        {
 
-        if(unitsWeight==="kg" && weightUnit==="kg")
-        {
-            alert('choose a different unit')
-        }
-        else if(unitsWeight==="lbs" && weightUnit==="lbs")
-        {
-            alert("similar units")
-
-        }
-        else if(unitsWeight==="kg" && weightUnit==="lbs")
-        {
             output=(base*0.453592)
             converted.textContent=output;
         }
@@ -63,6 +45,9 @@ let calculation=(value)=>{
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
      {
+        let from;
+        let to;
+        console.log('length')
         let base = document.getElementById('base')
         base.value=" "
         let converted = document.getElementById('converted')
@@ -73,13 +58,45 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=false;
         unitsFromWeight.hidden=true;
         unitsToWeight.hidden=true;
+        from =  unitsFrom.value;
+        to = unitsTo.value;
+        unitsFrom.addEventListener("change",(e)=>{
+            from=e.target.value;
+            //console.log(x);
+            if(from===to)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        unitsTo.addEventListener("change",(e)=>{
+            to=e.target.value;
+            //console.log(y);
+            if(from===to)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {  
         convert.addEventListener("click",()=>{
             calculation(e.target.value)
-            
+          
         })
+        }
      }
      else if(e.target.value==="weight")
      {
+        console.log('weight')
         let base = document.getElementById('base')
         base.value=" "
         let converted = document.getElementById('converted')
@@ -90,10 +107,39 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=false;
         unitsFrom.hidden=true;
         unitsTo.hidden=true;
+        let fromValueWeight = unitsFromWeight.value;
+        let toValueWeight = unitsToWeight.value;
+        unitsFromWeight.addEventListener("change",(e)=>{
+            fromValueWeight=e.target.value;
+            if(fromValueWeight===toValueWeight)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        unitsToWeight.addEventListener("change",(e)=>{
+            toValueWeight=e.target.value;
+            if(fromValueWeight===toValueWeight)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {
         convert.addEventListener("click",()=>{
             calculation(e.target.value)
             
         })
+        }
      }
      else{
         let base = document.getElementById('base')
