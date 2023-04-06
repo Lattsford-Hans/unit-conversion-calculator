@@ -2,7 +2,8 @@
 const convert = document.getElementById('convert');
 const form = document.getElementById('form');
 const scale = document.getElementById('Scale')
-/*calculation logic based on value*/
+
+
 let calculation=(value)=>{
     if (value==="length"){
         let base = document.getElementById('base').value;
@@ -40,8 +41,12 @@ let calculation=(value)=>{
             converted.textContent=output;
         }
     }
+    
+    
+
+    
+    
 }
-/*detects changes based on dropdown list*/
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
      {
@@ -155,5 +160,6 @@ scale.addEventListener("change",(e)=>{
         unitsFrom.hidden=true;
         unitsTo.hidden=true;
      }
+
 })
 
