@@ -62,10 +62,10 @@ scale.addEventListener("change",(e)=>{
         /*logic to disable convert button if inputs are similar*/
         unitsFrom.addEventListener("change",(e)=>{
             from=e.target.value;
-            //console.log(x);
+            
             if(from===to)
             {
-           // console.log(x);
+           
             convert.disabled=true;
             }
             else
@@ -75,10 +75,10 @@ scale.addEventListener("change",(e)=>{
         })
         unitsTo.addEventListener("change",(e)=>{
             to=e.target.value;
-            //console.log(y);
+          
             if(from===to)
             {
-           // console.log(x);
+           
             convert.disabled=true;
             }
             else
@@ -126,7 +126,7 @@ scale.addEventListener("change",(e)=>{
             toValueWeight=e.target.value;
             if(fromValueWeight===toValueWeight)
             {
-           // console.log(x);
+           
             convert.disabled=true;
             }
             else
