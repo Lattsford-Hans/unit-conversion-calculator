@@ -38,8 +38,27 @@ let calculation=(value)=>{
             output=(base*2.20462)
             converted.textContent=output;
         }
+    }
+    else if (value==="dtr"){
+        let base = document.getElementById('base').value;
+        let converted = document.getElementById('converted');
+        let output=0;
+        let unitsDTR = document.getElementById('unitsToDTR').value;
+        let DTRUnit = document.getElementById('unitsFromDTR').value;
+        if(unitsDTR==="mbps" && DTRUnit==="MBPS")
+        {
+
+            output=(base*8)
+            converted.textContent=output;
+        }
+        else if(unitsDTR==="MBPS" && DTRUnit==="mbps")
+        {
+            output=(base*0.125)
+            converted.textContent=output;
+        }
     }  
 }
+
 /*Listening on the unit chooser drop down to select different units to convert*/
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
@@ -57,6 +76,8 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=false;
         unitsFromWeight.hidden=true;
         unitsToWeight.hidden=true;
+        unitsFromDTR.hidden=true;
+        unitsToDTR.hidden=true;
         from =  unitsFrom.value;
         to = unitsTo.value;
         /*logic to disable convert button if inputs are similar*/
@@ -107,6 +128,8 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=false;
         unitsFrom.hidden=true;
         unitsTo.hidden=true;
+        unitsFromDTR.hidden=true;
+        unitsToDTR.hidden=true;
         let fromValueWeight = unitsFromWeight.value;
         let toValueWeight = unitsToWeight.value;
         /*logic to disable convert button if inputs are similar*/
@@ -125,6 +148,56 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.addEventListener("change",(e)=>{
             toValueWeight=e.target.value;
             if(fromValueWeight===toValueWeight)
+            {
+           
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {
+        convert.addEventListener("click",()=>{
+            calculation(e.target.value)
+            
+        })
+        }
+     }
+     else if(e.target.value==="dtr")
+     {
+        
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
+        let unitsFromDTR = document.getElementById('unitsFromDTR')
+        let unitsToDTR = document.getElementById('unitsToDTR')
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+        unitsFrom.hidden=true;
+        unitsTo.hidden=true;
+        unitsFromDTR.hidden=false;
+        unitsToDTR.hidden=false;
+        let fromValueDTR = unitsFromDTR.value;
+        let toValueDTR = unitsToDTR.value;
+        /*logic to disable convert button if inputs are similar*/
+        unitsFromDTR.addEventListener("change",(e)=>{
+            fromValueDTR=e.target.value;
+            if(fromValueDTR===toValueDTR)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        unitsToDTR.addEventListener("change",(e)=>{
+            toValueDTR=e.target.value;
+            if(fromValueDTR===toValueDTR)
             {
            
             convert.disabled=true;
