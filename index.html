@@ -14,6 +14,7 @@
         <option value="weight" id="weight">Weight</option>
         <option value="length" id="length">Length</option>
         <option value="dtr" id="dtr">Data Transfer Rate</option>
+        <option value="currency" id="curr">Currency</option>
         <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select><br> 
     <label for="base">Convert:</label>
@@ -28,6 +29,13 @@
         <option value="kg" id="kilo">Kilo</option>
         <option value="lbs" id="pound">Pound</option>
     </select>
+    <select name="units" id="unitsFromCurrency" hidden>
+        <option value="Choose a unit" id="choose">choose a unit</option>
+        <option value="USD" id="us">US</option>
+        <option value="INR" id="rupees">Rs</option>
+       <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
+    </select>
+  
     <select name="units" id="unitsFromDTR" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="mbps" id="mbps">Megabit PS</option>
@@ -63,6 +71,13 @@
         <option value="MBPS" id="MBPS">Megabyte PS</option>
     </select>
 
+    <select name="units" id="unitsToCurrency" hidden>
+        <option value="Choose a unit" id="choose">choose a unit</option>
+        <option value="USD" id="us">US</option>
+        <option value="INR" id="rupees">Rs</option>
+
+    </select>
+    
     <div id="converted"></div>
     
    

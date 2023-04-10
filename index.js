@@ -57,6 +57,41 @@ let calculation=(value)=>{
             converted.textContent=output;
         }
     }  
+    else if(value==="currency")
+    {
+   
+        let base = document.getElementById('base').value;
+        let converted = document.getElementById('converted');
+        let fromCurr = document.getElementById('unitsFromCurrency').value;
+        let toCurr = document.getElementById('unitsToCurrency').value;
+        let calculateRate=async(base,converted,fromCurr,toCurr)=>{
+            try{
+            let response =  await fetch("https://open.er-api.com/v6/latest/"+fromCurr)
+            let re = await response.text()  
+            let actualCurrency = JSON.parse(re)
+           // console.log(actualCurrency.rates.INR)
+            converted.textContent=base*actualCurrency.rates[toCurr];
+        
+            }
+            catch(e)
+            {
+                return e;
+            }
+        
+        }
+
+       if(fromCurr==="USD" && toCurr==="INR")
+        {
+            
+            calculateRate(base,converted,fromCurr,toCurr)
+
+        }
+        else if(fromCurr==="INR" && toCurr==="USD")
+        {
+            calculateRate(base,converted,fromCurr,toCurr)
+        }
+       
+    }
 }
 
 /*Listening on the unit chooser drop down to select different units to convert*/
@@ -117,7 +152,7 @@ scale.addEventListener("change",(e)=>{
      }
      else if(e.target.value==="weight")
      {
-        console.log('weight')
+       // console.log('weight')
         let base = document.getElementById('base')
         base.value=" "
         let converted = document.getElementById('converted')
@@ -198,6 +233,62 @@ scale.addEventListener("change",(e)=>{
         unitsToDTR.addEventListener("change",(e)=>{
             toValueDTR=e.target.value;
             if(fromValueDTR===toValueDTR)
+            {
+           
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {
+        convert.addEventListener("click",()=>{
+            calculation(e.target.value)
+            
+        })
+        }
+     }
+     else if(e.target.value==="currency")
+     {
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
+        let unitsFromCurrency = document.getElementById('unitsFromCurrency')
+        let unitsToCurrency = document.getElementById('unitsToCurrency')
+        let unitsFromWeight = document.getElementById('unitsFromWeight')
+        let unitsToWeight = document.getElementById('unitsToWeight')
+        let unitsFromLength = document.getElementById('unitsFrom')
+        let unitsToLength = document.getElementById('unitsTo')
+        let unitsFromDTR = document.getElementById('unitsFromDTR')
+        let unitsToDTR = document.getElementById('unitsToDTR')
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+        unitsFromLength.hidden=true;
+        unitsToLength.hidden=true;
+        unitsFromDTR.hidden=true;
+        unitsToDTR.hidden=true;
+        unitsFromCurrency.hidden=false;
+        unitsToCurrency.hidden=false;
+        let unitsFrom=unitsFromCurrency.value;
+        let unitsTo=unitsToCurrency.value;
+        unitsFromCurrency.addEventListener("change",(e)=>{
+            unitsFrom=e.target.value;
+            if(unitsFrom===unitsTo)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        unitsToCurrency.addEventListener("change",(e)=>{
+            unitsTo=e.target.value;
+            if(unitsFrom===unitsTo)
             {
            
             convert.disabled=true;
