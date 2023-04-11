@@ -66,12 +66,23 @@ let calculation=(value)=>{
         let toCurr = document.getElementById('unitsToCurrency').value;
         let calculateRate=async(base,converted,fromCurr,toCurr)=>{
             try{
-            let response =  await fetch("https://open.er-api.com/v6/latest/"+fromCurr)
+            let response =  await fetch("https://open.er-api.com/v6/latest/USD")
             let re = await response.text()  
             let actualCurrency = JSON.parse(re)
-           // console.log(actualCurrency.rates.INR)
+           if(fromCurr==="USD" && toCurr!=="USD")
+           {
             converted.textContent=base*actualCurrency.rates[toCurr];
-        
+           }
+            else if(toCurr==='USD' && fromCurr!=='USD')
+            {
+                converted.textContent=base*actualCurrency.rates[fromCurr]
+            }
+            else if(fromCurr!=='USD' && toCurr!=='USD')
+            {
+                let x = actualCurrency.rates[fromCurr]
+                let y = actualCurrency.rates[toCurr]
+                converted.textContent=base*(y/x)
+            }
             }
             catch(e)
             {
@@ -80,15 +91,10 @@ let calculation=(value)=>{
         
         }
 
-       if(fromCurr==="USD" && toCurr==="INR")
+       if(fromCurr!==toCurr)
         {
-            
             calculateRate(base,converted,fromCurr,toCurr)
 
-        }
-        else if(fromCurr==="INR" && toCurr==="USD")
-        {
-            calculateRate(base,converted,fromCurr,toCurr)
         }
        
     }
