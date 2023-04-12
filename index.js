@@ -47,7 +47,7 @@ let calculation=(value)=>{
         let areaUnit = document.getElementById('unitsFromArea').value;
         if(unitsArea==="hectare" && areaUnit==="acre")
         {
-
+            console.log("ku")
             output=(base*2.47105)
             converted.textContent=output;
             
@@ -151,6 +151,9 @@ scale.addEventListener("change",(e)=>{
         unitsToDist.hidden=true;
         unitsFromArea.hidden=true;
         unitsToArea.hidden=true;
+        unitsToCurrency.hidden=true;
+        unitsFromCurrency.hidden=true;
+
 
         from =  unitsFrom.value;
         to = unitsTo.value;
@@ -208,6 +211,9 @@ scale.addEventListener("change",(e)=>{
         unitsToDist.hidden=true;
         unitsFromArea.hidden=true;
         unitsToArea.hidden=true;
+        unitsToCurrency.hidden=true;
+        unitsFromCurrency.hidden=true;
+
 
         let fromValueWeight = unitsFromWeight.value;
         let toValueWeight = unitsToWeight.value;
@@ -263,6 +269,9 @@ scale.addEventListener("change",(e)=>{
         unitsToDTR.hidden=true;
         unitsFromDist.hidden=false;
         unitsToDist.hidden=false;
+        unitsToCurrency.hidden=true;
+        unitsFromCurrency.hidden=true;
+
 
         let fromValueDist = unitsFromDist.value;
         let toValueDist = unitsToDist.value;
@@ -318,12 +327,16 @@ scale.addEventListener("change",(e)=>{
         unitsToDist.hidden=true;
         unitsFromArea.hidden=false;
         unitsToArea.hidden=false;
+        unitsToCurrency.hidden=true;
+        unitsFromCurrency.hidden=true;
+
 
         let fromValueArea = unitsFromArea.value;
         let toValueArea = unitsToArea.value;
         /*logic to disable convert button if inputs are similar*/
         unitsFromArea.addEventListener("change",(e)=>{
             fromValueArea=e.target.value;
+            console.log(fromValueArea)
             if(fromValueArea===toValueArea)
             {
            // console.log(x);
@@ -338,13 +351,15 @@ scale.addEventListener("change",(e)=>{
         })
         unitsToArea.addEventListener("change",(e)=>{
             toValueArea=e.target.value;
+            console.log(toValueArea)
             if(fromValueArea===toValueArea)
             {
-           
+                console.log("ho")
             convert.disabled=true;
             }
             else
             {
+
                 convert.disabled=false;
             }
         })
@@ -376,6 +391,8 @@ scale.addEventListener("change",(e)=>{
         unitsToDist.hidden=true;
         unitsFromArea.hidden=true;
         unitsToArea.hidden=true;
+        unitsToCurrency.hidden=true;
+        unitsFromCurrency.hidden=true;
 
         let fromValueDTR = unitsFromDTR.value;
         let toValueDTR = unitsToDTR.value;
@@ -412,8 +429,6 @@ scale.addEventListener("change",(e)=>{
         })
         }
      }
-
-     
      else if(e.target.value==="currency")
      {
         let base = document.getElementById('base')
@@ -491,7 +506,7 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=true;
         unitsFrom.hidden=true;
         unitsTo.hidden=true;
-        
+
      }
 
 })
