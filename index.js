@@ -56,7 +56,25 @@ let calculation=(value)=>{
             output=(base*0.125)
             converted.textContent=output;
         }
-    }  
+    }
+    else if (value==="distance"){
+        let base = document.getElementById('base').value;
+        let converted = document.getElementById('converted');
+        let output=0;
+        let unitsDist = document.getElementById('unitsToDist').value;
+        let DistUnit = document.getElementById('unitsFromDist').value;
+        if(unitsDist==="km" && DistUnit==="mile")
+        {
+
+            output=(base*1.60934)
+            converted.textContent=output;
+        }
+        else if(unitsDist==="mile" && DistUnit==="km")
+        {
+            output=(base*0.621371)
+            converted.textContent=output;
+        }
+    }
     else if(value==="currency")
     {
    
@@ -109,6 +127,9 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=true;
         unitsFromDTR.hidden=true;
         unitsToDTR.hidden=true;
+        unitsFromDist.hidden=true;
+        unitsToDist.hidden=true;
+
         from =  unitsFrom.value;
         to = unitsTo.value;
         /*logic to disable convert button if inputs are similar*/
@@ -161,6 +182,9 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=true;
         unitsFromDTR.hidden=true;
         unitsToDTR.hidden=true;
+        nitsFromDist.hidden=true;
+        unitsToDist.hidden=true;
+
         let fromValueWeight = unitsFromWeight.value;
         let toValueWeight = unitsToWeight.value;
         /*logic to disable convert button if inputs are similar*/
@@ -196,6 +220,59 @@ scale.addEventListener("change",(e)=>{
         })
         }
      }
+     else if(e.target.value==="distance")
+     {
+       // console.log('weight')
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
+        let unitsFromDist = document.getElementById('unitsFromDist')
+        let unitsToDist = document.getElementById('unitsToDist')
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+        unitsFrom.hidden=true;
+        unitsTo.hidden=true;
+        unitsFromDTR.hidden=true;
+        unitsToDTR.hidden=true;
+        unitsFromDist.hidden=false;
+        unitsToDist.hidden=false;
+
+        let fromValueDist = unitsFromDist.value;
+        let toValueDist = unitsToDist.value;
+        /*logic to disable convert button if inputs are similar*/
+        unitsFromDist.addEventListener("change",(e)=>{
+            fromValueDist=e.target.value;
+            if(fromValueDist===toValueDist)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        unitsToDist.addEventListener("change",(e)=>{
+            toValueDist=e.target.value;
+            if(fromValueDist===toValueDist)
+            {
+           
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {
+        convert.addEventListener("click",()=>{
+            calculation(e.target.value)
+            
+        })
+        }
+     }
      else if(e.target.value==="dtr")
      {
         
@@ -211,6 +288,9 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=true;
         unitsFromDTR.hidden=false;
         unitsToDTR.hidden=false;
+        unitsFromDist.hidden=true;
+        unitsToDist.hidden=true;
+
         let fromValueDTR = unitsFromDTR.value;
         let toValueDTR = unitsToDTR.value;
         /*logic to disable convert button if inputs are similar*/
@@ -246,6 +326,8 @@ scale.addEventListener("change",(e)=>{
         })
         }
      }
+
+     
      else if(e.target.value==="currency")
      {
         let base = document.getElementById('base')
@@ -260,6 +342,8 @@ scale.addEventListener("change",(e)=>{
         let unitsToLength = document.getElementById('unitsTo')
         let unitsFromDTR = document.getElementById('unitsFromDTR')
         let unitsToDTR = document.getElementById('unitsToDTR')
+        let unitsToDist = document.getElementById('unitsToDist')
+        let unitsFromDist = document.getElementById('unitsFromDist')
         unitsFromWeight.hidden=true;
         unitsToWeight.hidden=true;
         unitsFromLength.hidden=true;
@@ -268,6 +352,8 @@ scale.addEventListener("change",(e)=>{
         unitsToDTR.hidden=true;
         unitsFromCurrency.hidden=false;
         unitsToCurrency.hidden=false;
+        unitsFromDist.hidden=true;
+        unitsToDist.hidden=true;
         let unitsFrom=unitsFromCurrency.value;
         let unitsTo=unitsToCurrency.value;
         unitsFromCurrency.addEventListener("change",(e)=>{
