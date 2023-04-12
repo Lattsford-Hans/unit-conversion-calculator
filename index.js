@@ -64,36 +64,26 @@ let calculation=(value)=>{
         let converted = document.getElementById('converted');
         let fromCurr = document.getElementById('unitsFromCurrency').value;
         let toCurr = document.getElementById('unitsToCurrency').value;
-        let calculateRate=async(base,converted,fromCurr,toCurr)=>{
+        let loading = document.getElementById('loading')
+        let fetchRate=async(fromCurr)=>{
             try{
-            let response =  await fetch("https://open.er-api.com/v6/latest/USD")
-            let re = await response.text()  
-            let actualCurrency = JSON.parse(re)
-           if(fromCurr==="USD" && toCurr!=="USD")
-           {
-            converted.textContent=base*actualCurrency.rates[toCurr];
-           }
-            else if(toCurr==='USD' && fromCurr!=='USD')
-            {
-                converted.textContent=base*actualCurrency.rates[fromCurr]
-            }
-            else if(fromCurr!=='USD' && toCurr!=='USD')
-            {
-                let x = actualCurrency.rates[fromCurr]
-                let y = actualCurrency.rates[toCurr]
-                converted.textContent=base*(y/x)
-            }
+            let res=await fetch("https://open.er-api.com/v6/latest/"+fromCurr)
+            let response = await res.json(res)
+            return response;
             }
             catch(e)
             {
                 return e;
             }
-        
         }
-
        if(fromCurr!==toCurr)
         {
-            calculateRate(base,converted,fromCurr,toCurr)
+            fetchRate(fromCurr).then(
+                (response) =>{
+                        let conv = base*(response.rates[toCurr])
+                        converted.textContent=conv;
+                }
+            )
 
         }
        
