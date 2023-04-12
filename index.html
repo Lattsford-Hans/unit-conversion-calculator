@@ -16,6 +16,7 @@
         <option value="dtr" id="dtr">Data Transfer Rate</option>
         <option value="currency" id="curr">Currency</option>
         <option value="distance" id="dist">Distance</option>
+        <option value="area" id="area">Area</option>
         <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select><br> 
     <label for="base">Convert:</label>
@@ -84,6 +85,12 @@
         <option value="km" id="km">KM</option>
         <option value="mile" id="mile">Mile</option>
     </select>
+
+    <select name="units" id="unitsFromArea" hidden>
+        <option value="Choose a unit" id="choose">choose a unit</option>
+        <option value="hectare" id="hectare">Hectare</option>
+        <option value="Acre" id="Acre">Acre</option>
+    </select>
     
     <input type="number" id="base" name="base" required><br><br>
     
@@ -114,11 +121,18 @@
         <option value="MBPS" id="MBPS">Megabyte PS</option>
     </select>
 
+    <select name="units" id="unitsToArea" hidden>
+        <option value="Choose a unit" id="choose">choose a unit</option>
+        <option value="hectare" id="hectare">Hectare</option>
+        <option value="acre" id="acre">Acre</option>
+    </select>
+
     <select name="units" id="unitsToDist" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="km" id="mbps">KM</option>
+        <option value="km" id="km">KM</option>
         <option value="mile" id="mile">Mile</option>
     </select>
+
 
     <select name="units" id="unitsToCurrency" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
