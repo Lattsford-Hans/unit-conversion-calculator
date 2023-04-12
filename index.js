@@ -39,6 +39,26 @@ let calculation=(value)=>{
             converted.textContent=output;
         }
     }
+    else if (value==="area"){
+        let base = document.getElementById('base').value;
+        let converted = document.getElementById('converted');
+        let output=0;
+        let unitsArea = document.getElementById('unitsToArea').value;
+        let areaUnit = document.getElementById('unitsFromArea').value;
+        if(unitsArea==="hectare" && areaUnit==="acre")
+        {
+
+            output=(base*2.47105)
+            converted.textContent=output;
+            
+        }
+        else if(unitsArea==="acre" && areaUnit==="hectare")
+        {
+            console.log("xyz")
+            output=(base*0.404686)
+            converted.textContent=output;
+        }
+    }
     else if (value==="dtr"){
         let base = document.getElementById('base').value;
         let converted = document.getElementById('converted');
@@ -129,6 +149,8 @@ scale.addEventListener("change",(e)=>{
         unitsToDTR.hidden=true;
         unitsFromDist.hidden=true;
         unitsToDist.hidden=true;
+        unitsFromArea.hidden=true;
+        unitsToArea.hidden=true;
 
         from =  unitsFrom.value;
         to = unitsTo.value;
@@ -182,8 +204,10 @@ scale.addEventListener("change",(e)=>{
         unitsTo.hidden=true;
         unitsFromDTR.hidden=true;
         unitsToDTR.hidden=true;
-        nitsFromDist.hidden=true;
+        unitsFromDist.hidden=true;
         unitsToDist.hidden=true;
+        unitsFromArea.hidden=true;
+        unitsToArea.hidden=true;
 
         let fromValueWeight = unitsFromWeight.value;
         let toValueWeight = unitsToWeight.value;
@@ -229,6 +253,8 @@ scale.addEventListener("change",(e)=>{
         converted.textContent=" "
         let unitsFromDist = document.getElementById('unitsFromDist')
         let unitsToDist = document.getElementById('unitsToDist')
+        unitsFromArea.hidden=true;
+        unitsToArea.hidden=true;
         unitsFromWeight.hidden=true;
         unitsToWeight.hidden=true;
         unitsFrom.hidden=true;
@@ -273,6 +299,64 @@ scale.addEventListener("change",(e)=>{
         })
         }
      }
+     else if(e.target.value==="area")
+     {
+       // console.log('weight')
+        let base = document.getElementById('base')
+        base.value=" "
+        let converted = document.getElementById('converted')
+        converted.textContent=" "
+        let unitsFromArea = document.getElementById('unitsFromArea')
+        let unitsToArea = document.getElementById('unitsToArea')
+        unitsFromWeight.hidden=true;
+        unitsToWeight.hidden=true;
+        unitsFrom.hidden=true;
+        unitsTo.hidden=true;
+        unitsFromDTR.hidden=true;
+        unitsToDTR.hidden=true;
+        unitsFromDist.hidden=true;
+        unitsToDist.hidden=true;
+        unitsFromArea.hidden=false;
+        unitsToArea.hidden=false;
+
+        let fromValueArea = unitsFromArea.value;
+        let toValueArea = unitsToArea.value;
+        /*logic to disable convert button if inputs are similar*/
+        unitsFromArea.addEventListener("change",(e)=>{
+            fromValueArea=e.target.value;
+            if(fromValueArea===toValueArea)
+            {
+           // console.log(x);
+            convert.disabled=true;
+            }
+            else
+            {
+
+                console.log("hello")
+                convert.disabled=false;
+            }
+        })
+        unitsToArea.addEventListener("change",(e)=>{
+            toValueArea=e.target.value;
+            if(fromValueArea===toValueArea)
+            {
+           
+            convert.disabled=true;
+            }
+            else
+            {
+                convert.disabled=false;
+            }
+        })
+        if(!convert.disabled)
+        {
+        convert.addEventListener("click",()=>{
+            console.log("hi")
+            calculation(e.target.value)
+            
+        })
+        }
+     }
      else if(e.target.value==="dtr")
      {
         
@@ -290,6 +374,8 @@ scale.addEventListener("change",(e)=>{
         unitsToDTR.hidden=false;
         unitsFromDist.hidden=true;
         unitsToDist.hidden=true;
+        unitsFromArea.hidden=true;
+        unitsToArea.hidden=true;
 
         let fromValueDTR = unitsFromDTR.value;
         let toValueDTR = unitsToDTR.value;
@@ -344,6 +430,8 @@ scale.addEventListener("change",(e)=>{
         let unitsToDTR = document.getElementById('unitsToDTR')
         let unitsToDist = document.getElementById('unitsToDist')
         let unitsFromDist = document.getElementById('unitsFromDist')
+        let unitsToArea = document.getElementById('unitsToArea')
+        let unitsFromArea = document.getElementById('unitsFromArea')
         unitsFromWeight.hidden=true;
         unitsToWeight.hidden=true;
         unitsFromLength.hidden=true;
@@ -354,6 +442,8 @@ scale.addEventListener("change",(e)=>{
         unitsToCurrency.hidden=false;
         unitsFromDist.hidden=true;
         unitsToDist.hidden=true;
+        unitsFromArea.hidden=true;
+        unitsToArea.hidden=true;
         let unitsFrom=unitsFromCurrency.value;
         let unitsTo=unitsToCurrency.value;
         unitsFromCurrency.addEventListener("change",(e)=>{
@@ -401,6 +491,7 @@ scale.addEventListener("change",(e)=>{
         unitsToWeight.hidden=true;
         unitsFrom.hidden=true;
         unitsTo.hidden=true;
+        
      }
 
 })
