@@ -116,10 +116,15 @@ let calculation=(value)=>{
         }
        if(fromCurr!==toCurr)
         {
+            setTimeout(()=>{
+                converted.textContent="loading..."
+
+             },100)
             fetchRate(fromCurr).then(
+               
                 (response) =>{
-                        let conv = base*(response.rates[toCurr])
-                        converted.textContent=conv;
+                     let conv = base*(response.rates[toCurr])
+                     converted.textContent=conv;
                 }
             )
 
