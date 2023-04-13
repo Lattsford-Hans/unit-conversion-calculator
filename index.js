@@ -118,15 +118,15 @@ let calculation=(value)=>{
         {
             setTimeout(()=>{
                 converted.textContent="loading..."
-
-             },100)
-            fetchRate(fromCurr).then(
+                fetchRate(fromCurr).then(
                
-                (response) =>{
-                     let conv = base*(response.rates[toCurr])
-                     converted.textContent=conv;
-                }
-            )
+                    (response) =>{
+                         let conv = base*(response.rates[toCurr])
+                         converted.textContent=conv;
+                    }
+                )
+             },1000)
+           
 
         }
        
