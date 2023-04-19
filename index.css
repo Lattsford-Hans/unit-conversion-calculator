@@ -8,20 +8,57 @@
 
 #converted{
     position: relative;
-    left: 400px;
-    top: -26px;
+    left: 475px;
+    top: -50px;
     color: #ededed;
-    font-size: 20px;
+    font-size: 35px;
 }
 
 #form{
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top: 200px;
-    left: 300px;
-    font-size: 20px;
+    top: 250px;
+    left: 250px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.scale {
+    background-color: peachpuff;
+    font-size: 30px;
+    color: #081b29;
     font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.units{
+    background-color: peachpuff;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    
+}
+
+.convert {
+    background-color: peachpuff;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+    
+
+}
+
+.base {
+    background-color: peachpuff;
+    font-size: 30px;
+    padding: 5px;
+    font-weight: 500;
+    
 }
 
 body {
@@ -35,7 +72,7 @@ body {
     left: 0;
     width: 100%;
     padding: 25px 15%;
-    background: transparent;
+    background: peachpuff   ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +82,7 @@ body {
 .logo {
     font-size: 40px;
     font-weight: 600;
-    color: #ededed;
+    color: #081b29;
     text-decoration: none;
     transition: .3s;
     
@@ -56,12 +93,13 @@ body {
 
 .navber a {
     font-size: 20px;
-    color: #ededed;
+    color: #081b29;
     text-decoration: none;
     font-weight: 600;
     margin-left: 30px;
     transition: .3s;
 }
-.navber a:hover {
+.navber a:hover,
+.navber a.active {
     color: cyan;
 }

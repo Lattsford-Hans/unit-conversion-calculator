@@ -20,7 +20,7 @@
         </nav>  
     </header>
     <form id="form">
-    <select name="scale" id="Scale">
+    <select name="scale" class='scale' id="Scale">
         <option value="choose">Choose a Unit</option>
         <option value="weight" id="weight">Weight</option>
         <option value="length" id="length">Length</option>
@@ -30,19 +30,19 @@
         <option value="area" id="area">Area</option>
         <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
     </select><br> 
-    <label for="base">Convert:</label>
-    <select name="units" id="unitsFrom" hidden>
+    <label for="base">Convert : </label>
+    <select name="units" class="units" id="unitsFrom" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="meter" id="meter">Meter</option>
         <option value="inch" id="inch">Inch</option>
        <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
     </select>
-    <select name="units" id="unitsFromWeight" hidden>
+    <select name="units" class="units" id="unitsFromWeight" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="kg" id="kilo">Kilo</option>
         <option value="lbs" id="pound">Pound</option>
     </select>
-    <select name="units" id="unitsFromCurrency" hidden>
+    <select name="units" class="units" id="unitsFromCurrency" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="USD" id="USD">USD</option>
         <option value="INR" id="INR">INR</option>
@@ -85,39 +85,39 @@
        <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
     </select>
   
-    <select name="units" id="unitsFromDTR" hidden>
+    <select name="units" class="units" id="unitsFromDTR" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="mbps" id="mbps">Megabit PS</option>
-        <option value="MBPS" id="MBPS">Megabyte PS</option>
+        <option value="mbps" id="mbps">Megabit/S</option>
+        <option value="MBPS" id="MBPS">Megabyte/S</option>
     </select>
 
-    <select name="units" id="unitsFromDist" hidden>
+    <select name="units" class="units" id="unitsFromDist" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="km" id="km">KM</option>
         <option value="mile" id="mile">Mile</option>
     </select>
 
-    <select name="units" id="unitsFromArea" hidden>
+    <select name="units" class="units" id="unitsFromArea" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="hectare" id="hectare">Hectare</option>
         <option value="acre" id="acre">Acre</option>
     </select>
     
-    <input type="number" id="base" name="base" required><br><br>
+    <input type="number" class="base" id="base" name="base" required><br><br>
     
       
     
-    <button type="button" id="convert">Convert</button> 
-    <label for="to">To</label> 
-    <label for="units">(choose a unit)</label>
+    <button type="button" class="convert" id="convert">Convert</button> 
+    <label for="to">To : </label> 
+    <!--<label for="units">(choose a unit)</label> -->
     
-    <select name="units" id="unitsToWeight" hidden>
+    <select name="units" class="units" id="unitsToWeight" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="kg" id="kilo">Kilo</option>
         <option value="lbs" id="pound">Pound</option>
     </select>
     
-    <select name="units" id="unitsTo" hidden>
+    <select name="units" class="units" id="unitsTo" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
     <option value="meter" id="meter">Meter</option>
     <option value="inch" id="inch">Inch</option>
@@ -126,13 +126,13 @@
    <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
     </select> 
     
-    <select name="units" id="unitsToDTR" hidden>
+    <select name="units" class="units" id="unitsToDTR" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="mbps" id="mbps">Megabit PS</option>
-        <option value="MBPS" id="MBPS">Megabyte PS</option>
+        <option value="mbps" id="mbps">Megabit/S</option>
+        <option value="MBPS" id="MBPS">Megabyte/S</option>
     </select>
 
-    <select name="units" id="unitsToArea" hidden>
+    <select name="units" class="units" id="unitsToArea" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="hectare" id="hectare">Hectare</option>
         <option value="acre" id="acre">Acre</option>
@@ -145,7 +145,7 @@
     </select>
 
 
-    <select name="units" id="unitsToCurrency" hidden>
+    <select name="units" class="units" id="unitsToCurrency" hidden>
         <option value="Choose a unit" id="choose">choose a unit</option>
         <option value="USD" id="USD">USD</option>
         <option value="INR" id="INR">INR</option>
