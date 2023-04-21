@@ -4,14 +4,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
+    border-radius: 50px;
 }
 
 #converted{
     position: relative;
-    left: 475px;
-    top: -50px;
+    left: 360px;
+    top: -45px;
     color: #ededed;
-    font-size: 35px;
+    font-size: 25px;
+    margin-left: 20px;
+    
+    
 }
 
 #form{
@@ -19,46 +23,59 @@
     justify-content: space-between;
     position: fixed;
     top: 250px;
-    left: 250px;
-    font-size: 35px;
+    left: 450px;
+    font-size: 25px;
     font-weight: 600;
 }
 
 .scale {
     background-color: peachpuff;
-    font-size: 30px;
+    font-size: 20px;
     color: #081b29;
     font-weight: 500;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 25px;
+    height: 100%;
+    width: none;
+    margin-bottom: 30px;
+    margin-left: 5px;
 }
 
 .units{
     background-color: peachpuff;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     cursor: pointer;
     border: none;
-    padding: 5px;
-    
+    padding: 10px;
+    border-radius: 25px;
+    height: 100%;
+    margin-left: 10px;
 }
 
 .convert {
     background-color: peachpuff;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 25px;
+    transition: 0.2s;
     
-
 }
+.convert:hover{
+    color: darkturquoise;
+}
+
 
 .base {
     background-color: peachpuff;
-    font-size: 30px;
-    padding: 5px;
+    font-size: 20px;
+    padding: 8px;
     font-weight: 500;
-    
+    border-radius: 25px;
+    margin-left: 20px;
 }
 
 body {
