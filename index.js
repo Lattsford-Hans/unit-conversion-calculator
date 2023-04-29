@@ -1,6 +1,7 @@
 const convert = document.getElementById('convert');
 const form = document.getElementById('form');
 const scale = document.getElementById('Scale')
+let currencyConvert = document.getElementById('currencyConvert')
 /*Function to convert from one value to another*/
 let calculation=(value)=>{
     if (value==="length"){
@@ -54,7 +55,7 @@ let calculation=(value)=>{
         }
         else if(unitsArea==="acre" && areaUnit==="hectare")
         {
-            console.log("xyz")
+           // console.log("xyz")
             output=(base*0.404686)
             converted.textContent=output;
         }
@@ -102,7 +103,6 @@ let calculation=(value)=>{
         let converted = document.getElementById('converted');
         let fromCurr = document.getElementById('unitsFromCurrency').value;
         let toCurr = document.getElementById('unitsToCurrency').value;
-        let currencyConvert = document.getElementById('currencyConvert')
         /*api call for fetching currencies*/
         let fetchRate=async(fromCurr)=>{
             try{
@@ -140,6 +140,7 @@ let calculation=(value)=>{
 scale.addEventListener("change",(e)=>{
      if(e.target.value==="length")
      {
+        currencyConvert.textContent=""
         let from;
         let to;
         console.log('length')
@@ -168,7 +169,6 @@ scale.addEventListener("change",(e)=>{
         /*logic to disable convert button if inputs are similar*/
         unitsFrom.addEventListener("change",(e)=>{
             from=e.target.value;
-            
             if(from===to)
             {
            
@@ -207,6 +207,7 @@ scale.addEventListener("change",(e)=>{
         base.value=" "
         let converted = document.getElementById('converted')
         converted.textContent=" "
+        currencyConvert.textContent=""
         let unitsFromWeight = document.getElementById('unitsFromWeight')
         let unitsToWeight = document.getElementById('unitsToWeight')
         unitsFromWeight.hidden=false;
@@ -265,6 +266,7 @@ scale.addEventListener("change",(e)=>{
         base.value=" "
         let converted = document.getElementById('converted')
         converted.textContent=" "
+        currencyConvert.textContent=""
         let unitsFromDist = document.getElementById('unitsFromDist')
         let unitsToDist = document.getElementById('unitsToDist')
         unitsFromArea.hidden=true;
@@ -323,6 +325,7 @@ scale.addEventListener("change",(e)=>{
         base.value=" "
         let converted = document.getElementById('converted')
         converted.textContent=" "
+        currencyConvert.textContent=""
         let unitsFromArea = document.getElementById('unitsFromArea')
         let unitsToArea = document.getElementById('unitsToArea')
         unitsFromWeight.hidden=true;
@@ -353,7 +356,7 @@ scale.addEventListener("change",(e)=>{
             else
             {
 
-                console.log("hello")
+               // console.log("hello")
                 convert.disabled=false;
             }
         })
@@ -362,7 +365,7 @@ scale.addEventListener("change",(e)=>{
             console.log(toValueArea)
             if(fromValueArea===toValueArea)
             {
-                console.log("ho")
+             //   console.log("ho")
             convert.disabled=true;
             }
             else
@@ -374,7 +377,7 @@ scale.addEventListener("change",(e)=>{
         if(!convert.disabled)
         {
         convert.addEventListener("click",()=>{
-            console.log("hi")
+           // console.log("hi")
             calculation(e.target.value)
             
         })
@@ -387,6 +390,7 @@ scale.addEventListener("change",(e)=>{
         base.value=" "
         let converted = document.getElementById('converted')
         converted.textContent=" "
+        currencyConvert.textContent=""
         let unitsFromDTR = document.getElementById('unitsFromDTR')
         let unitsToDTR = document.getElementById('unitsToDTR')
         unitsFromWeight.hidden=true;
