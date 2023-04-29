@@ -102,7 +102,8 @@ let calculation=(value)=>{
         let converted = document.getElementById('converted');
         let fromCurr = document.getElementById('unitsFromCurrency').value;
         let toCurr = document.getElementById('unitsToCurrency').value;
-        let loading = document.getElementById('loading')
+        let currencyConvert = document.getElementById('currencyConvert')
+        /*api call for fetching currencies*/
         let fetchRate=async(fromCurr)=>{
             try{
             let res=await fetch("https://open.er-api.com/v6/latest/"+fromCurr)
@@ -118,11 +119,13 @@ let calculation=(value)=>{
         {
             setTimeout(()=>{
                 converted.textContent="loading..."
-                fetchRate(fromCurr).then(
-               
+                fetchRate(fromCurr).then(       
                     (response) =>{
                          let conv = base*(response.rates[toCurr])
                          converted.textContent=conv;
+                         let convertedvalue=response.rates[toCurr]
+                         let convertRateText="1 "+fromCurr+" = "+convertedvalue+" "+toCurr;
+                         currencyConvert.textContent = convertRateText 
                     }
                 )
              },1000)
