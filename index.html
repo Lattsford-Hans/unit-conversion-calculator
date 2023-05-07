@@ -1,194 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel = "stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Converter</title>
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo">Unit Converter</a>
 
         <nav class="navber">
-           
-        </nav>  
+
+        </nav>
     </header>
     <form id="form">
-    <select name="scale" class='scale' id="Scale">
-        <option value="choose">Choose a Unit</option>
-        <option value="weight" id="weight">Weight</option>
-        <option value="length" id="length">Length</option>
-        <option value="dtr" id="dtr">Data Transfer Rate</option>
-        <option value="currency" id="curr">Currency</option>
-        <option value="distance" id="dist">Distance</option>
-        <option value="area" id="area">Area</option>
-        <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
-    </select><br> 
-    <label for="base">Convert : </label>
-    <select name="units" class="units" id="unitsFrom" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="meter" id="meter">Meter</option>
-        <option value="inch" id="inch">Inch</option>
-       <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
-    </select>
-    <select name="units" class="units" id="unitsFromWeight" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="kg" id="kilo">Kilo</option>
-        <option value="lbs" id="pound">Pound</option>
-    </select>
-    <select name="units" class="units" id="unitsFromCurrency" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="USD" id="USD">USD</option>
-        <option value="INR" id="INR">INR</option>
-        <option value="EUR" id="EUR">EUR</option>
-        <option value="JPY" id="JPY">JPY</option>
-        <option value="GBP" id="GBP">GBP</option>
-        <option value="HKD" id="HKD">HKD</option>
-        <option value="CHF" id="CHF">CHF</option>
-        <option value="MXN" id="MXN">MXN</option>
-        <option value="CNY" id="CNY">CNY</option>
-        <option value="AUD" id="AUD">AUD</option>
-        <option value="SGD" id="SGD">SGD</option>
-        <option value="SEK" id="SEK">SEK</option>
-        <option value="KRW" id="KRW">KRW</option>
-        <option value="NOK" id="NOK">NOK</option>
-        <option value="BRL" id="BRL">BRL</option>
-        <option value="CAD" id="CAD">CAD</option>
-        <option value="NZD" id="NZD">NZD</option>
-        <option value="ZAR" id="ZAR">ZAR</option>
-        <option value="TWD" id="TWD">TWD</option>
-        <option value="DKK" id="DKK">DKK</option>
-        <option value="THB" id="THB">THB</option>
-        <option value="PLN" id="PLN">PLN</option>
-        <option value="ILS" id="ILS">ILS</option>
-        <option value="IDR" id="IDR">IDR</option>
-        <option value="CZK" id="CZK">CZK</option>
-        <option value="AED" id="AED">AED</option>
-        <option value="TRY" id="TRY">TRY</option>
-        <option value="SAR" id="SAR">SAR</option>
-        <option value="PHP" id="PHP">PHP</option>
-        <option value="MYR" id="MYR">MYR</option>
-        <option value="COP" id="COP">COP</option>
-        <option value="RUB" id="RUB">RUB</option>
-        <option value="PEN" id="PEN">PEN</option>
-        <option value="BHD" id="BHD">BHD</option>
-        <option value="BGN" id="BGN">BGN</option>
-        <option value="ARS" id="ARS">ARS</option>
-        <option value="QAR" id="QAR">QAR</option>
-        <option value="KWD" id="KWD">KWD</option>
-       <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
-    </select>
-  
-    <select name="units" class="units" id="unitsFromDTR" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="mbps" id="mbps">Megabit/S</option>
-        <option value="MBPS" id="MBPS">Megabyte/S</option>
-    </select>
+        <select name="scale" class='scale' id="Scale">
+            <option value="choose">Choose a Unit</option>
+            <option value="weight" id="weight">Weight</option>
+            <option value="length" id="length">Length</option>
+            <option value="dtr" id="dtr">Data Transfer Rate</option>
+            <option value="currency" id="curr">Currency</option>
+            <option value="distance" id="dist">Distance</option>
+            <option value="area" id="area">Area</option>
+            <!-- <option value="US_Dollar" id="dollar">Dollar</option>-->
+        </select><br>
+        <label for="base">Convert : </label>
+        <select name="units" class="units" id="unitsFrom" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="meter" id="meter">Meter</option>
+            <option value="inch" id="inch">Inch</option>
+            <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
+        </select>
+        <select name="units" class="units" id="unitsFromWeight" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="kg" id="kilo">Kilo</option>
+            <option value="lbs" id="pound">Pound</option>
+        </select>
+        <select name="units" class="units" id="unitsFromCurrency" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="USD" id="USD">USD 🇺🇸</option>
+            <option value="INR" id="INR">INR </option>
+            <option value="EUR" id="EUR">EUR</option>
+            <option value="JPY" id="JPY">JPY</option>
+            <option value="GBP" id="GBP">GBP</option>
+            <option value="HKD" id="HKD">HKD</option>
+            <option value="CHF" id="CHF">CHF</option>
+            <option value="MXN" id="MXN">MXN</option>
+            <option value="CNY" id="CNY">CNY</option>
+            <option value="AUD" id="AUD">AUD</option>
+            <option value="SGD" id="SGD">SGD</option>
+            <option value="SEK" id="SEK">SEK</option>
+            <option value="KRW" id="KRW">KRW</option>
+            <option value="NOK" id="NOK">NOK</option>
+            <option value="BRL" id="BRL">BRL</option>
+            <option value="CAD" id="CAD">CAD</option>
+            <option value="NZD" id="NZD">NZD</option>
+            <option value="ZAR" id="ZAR">ZAR</option>
+            <option value="TWD" id="TWD">TWD</option>
+            <option value="DKK" id="DKK">DKK</option>
+            <option value="THB" id="THB">THB</option>
+            <option value="PLN" id="PLN">PLN</option>
+            <option value="ILS" id="ILS">ILS</option>
+            <option value="IDR" id="IDR">IDR</option>
+            <option value="CZK" id="CZK">CZK</option>
+            <option value="AED" id="AED">AED</option>
+            <option value="TRY" id="TRY">TRY</option>
+            <option value="SAR" id="SAR">SAR</option>
+            <option value="PHP" id="PHP">PHP</option>
+            <option value="MYR" id="MYR">MYR</option>
+            <option value="COP" id="COP">COP</option>
+            <option value="RUB" id="RUB">RUB</option>
+            <option value="PEN" id="PEN">PEN</option>
+            <option value="BHD" id="BHD">BHD</option>
+            <option value="BGN" id="BGN">BGN</option>
+            <option value="ARS" id="ARS">ARS</option>
+            <option value="QAR" id="QAR">QAR</option>
+            <option value="KWD" id="KWD">KWD</option>
+            <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
+        </select>
 
-    <select name="units" class="units" id="unitsFromDist" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="km" id="km">KM</option>
-        <option value="mile" id="mile">Mile</option>
-    </select>
+        <select name="units" class="units" id="unitsFromDTR" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="mbps" id="mbps">Megabit/S</option>
+            <option value="MBPS" id="MBPS">Megabyte/S</option>
+        </select>
 
-    <select name="units" class="units" id="unitsFromArea" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="hectare" id="hectare">Hectare</option>
-        <option value="acre" id="acre">Acre</option>
-    </select>
-    
-    <input type="number" class="base" id="base" name="base" required><br><br>
-    
-      
-    
-    <button type="button" class="convert" id="convert">Convert</button> 
-    <label for="to">To : </label> 
-    <!--<label for="units">(choose a unit)</label> -->
-    
-    <select name="units" class="units" id="unitsToWeight" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="kg" id="kilo">Kilo</option>
-        <option value="lbs" id="pound">Pound</option>
-    </select>
-    
-    <select name="units" class="units" id="unitsTo" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-    <option value="meter" id="meter">Meter</option>
-    <option value="inch" id="inch">Inch</option>
+        <select name="units" class="units" id="unitsFromDist" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="km" id="km">KM</option>
+            <option value="mile" id="mile">Mile</option>
+        </select>
 
-         
-   <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
-    </select> 
-    
-    <select name="units" class="units" id="unitsToDTR" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="mbps" id="mbps">Megabit/S</option>
-        <option value="MBPS" id="MBPS">Megabyte/S</option>
-    </select>
+        <select name="units" class="units" id="unitsFromArea" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="hectare" id="hectare">Hectare</option>
+            <option value="acre" id="acre">Acre</option>
+        </select>
 
-    <select name="units" class="units" id="unitsToArea" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="hectare" id="hectare">Hectare</option>
-        <option value="acre" id="acre">Acre</option>
-    </select>
-
-    <select name="units" id="unitsToDist" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="km" id="km">KM</option>
-        <option value="mile" id="mile">Mile</option>
-    </select>
+        <input type="number" class="base" id="base" name="base" required><br><br>
 
 
-    <select name="units" class="units" id="unitsToCurrency" hidden>
-        <option value="Choose a unit" id="choose">choose a unit</option>
-        <option value="USD" id="USD">USD</option>
-        <option value="INR" id="INR">INR</option>
-        <option value="EUR" id="EUR">EUR</option>
-        <option value="JPY" id="JPY">JPY</option>
-        <option value="GBP" id="GBP">GBP</option>
-        <option value="HKD" id="HKD">HKD</option>
-        <option value="CHF" id="CHF">CHF</option>
-        <option value="MXN" id="MXN">MXN</option>
-        <option value="CNY" id="CNY">CNY</option>
-        <option value="AUD" id="AUD">AUD</option>
-        <option value="SGD" id="SGD">SGD</option>
-        <option value="SEK" id="SEK">SEK</option>
-        <option value="KRW" id="KRW">KRW</option>
-        <option value="NOK" id="NOK">NOK</option>
-        <option value="BRL" id="BRL">BRL</option>
-        <option value="CAD" id="CAD">CAD</option>
-        <option value="NZD" id="NZD">NZD</option>
-        <option value="ZAR" id="ZAR">ZAR</option>
-        <option value="TWD" id="TWD">TWD</option>
-        <option value="DKK" id="DKK">DKK</option>
-        <option value="THB" id="THB">THB</option>
-        <option value="PLN" id="PLN">PLN</option>
-        <option value="ILS" id="ILS">ILS</option>
-        <option value="IDR" id="IDR">IDR</option>
-        <option value="CZK" id="CZK">CZK</option>
-        <option value="AED" id="AED">AED</option>
-        <option value="TRY" id="TRY">TRY</option>
-        <option value="SAR" id="SAR">SAR</option>
-        <option value="PHP" id="PHP">PHP</option>
-        <option value="MYR" id="MYR">MYR</option>
-        <option value="COP" id="COP">COP</option>
-        <option value="RUB" id="RUB">RUB</option>
-        <option value="PEN" id="PEN">PEN</option>
-        <option value="BHD" id="BHD">BHD</option>
-        <option value="BGN" id="BGN">BGN</option>
-        <option value="ARS" id="ARS">ARS</option>
-        <option value="QAR" id="QAR">QAR</option>
-        <option value="KWD" id="KWD">KWD</option>
-    </select>
-    <div id="converted"></div>
-    <div id="currencyConvert"></div>
-   
-   
-    
+
+        <button type="button" class="convert" id="convert">Convert</button>
+        <label for="to">To : </label>
+        <!--<label for="units">(choose a unit)</label> -->
+
+        <select name="units" class="units" id="unitsToWeight" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="kg" id="kilo">Kilo</option>
+            <option value="lbs" id="pound">Pound</option>
+        </select>
+
+        <select name="units" class="units" id="unitsTo" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="meter" id="meter">Meter</option>
+            <option value="inch" id="inch">Inch</option>
+
+
+            <!-- <option value="US_Dollar" id="dollar">Dollar</option> -->
+        </select>
+
+        <select name="units" class="units" id="unitsToDTR" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="mbps" id="mbps">Megabit/S</option>
+            <option value="MBPS" id="MBPS">Megabyte/S</option>
+        </select>
+
+        <select name="units" class="units" id="unitsToArea" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="hectare" id="hectare">Hectare</option>
+            <option value="acre" id="acre">Acre</option>
+        </select>
+
+        <select name="units" id="unitsToDist" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="km" id="km">KM</option>
+            <option value="mile" id="mile">Mile</option>
+        </select>
+
+
+        <select name="units" class="units" id="unitsToCurrency" hidden>
+            <option value="Choose a unit" id="choose">choose a unit</option>
+            <option value="USD" id="USD">USD 🇺🇸</option>
+            <option value="INR" id="INR">INR</option>
+            <option value="EUR" id="EUR">EUR</option>
+            <option value="JPY" id="JPY">JPY</option>
+            <option value="GBP" id="GBP">GBP</option>
+            <option value="HKD" id="HKD">HKD</option>
+            <option value="CHF" id="CHF">CHF</option>
+            <option value="MXN" id="MXN">MXN</option>
+            <option value="CNY" id="CNY">CNY</option>
+            <option value="AUD" id="AUD">AUD</option>
+            <option value="SGD" id="SGD">SGD</option>
+            <option value="SEK" id="SEK">SEK</option>
+            <option value="KRW" id="KRW">KRW</option>
+            <option value="NOK" id="NOK">NOK</option>
+            <option value="BRL" id="BRL">BRL</option>
+            <option value="CAD" id="CAD">CAD</option>
+            <option value="NZD" id="NZD">NZD</option>
+            <option value="ZAR" id="ZAR">ZAR</option>
+            <option value="TWD" id="TWD">TWD</option>
+            <option value="DKK" id="DKK">DKK</option>
+            <option value="THB" id="THB">THB</option>
+            <option value="PLN" id="PLN">PLN</option>
+            <option value="ILS" id="ILS">ILS</option>
+            <option value="IDR" id="IDR">IDR</option>
+            <option value="CZK" id="CZK">CZK</option>
+            <option value="AED" id="AED">AED</option>
+            <option value="TRY" id="TRY">TRY</option>
+            <option value="SAR" id="SAR">SAR</option>
+            <option value="PHP" id="PHP">PHP</option>
+            <option value="MYR" id="MYR">MYR</option>
+            <option value="COP" id="COP">COP</option>
+            <option value="RUB" id="RUB">RUB</option>
+            <option value="PEN" id="PEN">PEN</option>
+            <option value="BHD" id="BHD">BHD</option>
+            <option value="BGN" id="BGN">BGN</option>
+            <option value="ARS" id="ARS">ARS</option>
+            <option value="QAR" id="QAR">QAR</option>
+            <option value="KWD" id="KWD">KWD</option>
+        </select>
+        <div id="converted"></div>
+        <div id="currencyConvert"></div>
+
+
+
     </form>
-    <script src = "index.js"></script>
-    
+    <script src="index.js"></script>
+
 </body>
+
 </html>
