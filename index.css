@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
-    border-radius: 50px;
 }
 
 #converted{
@@ -22,10 +21,12 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top: 250px;
+    top: 200px;
     left: 450px;
     font-size: 25px;
     font-weight: 600;
+    border: 5px solid;
+    padding: 50px;
 }
 
 .scale {
@@ -87,24 +88,15 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     padding: 25px 15%;
-    background: peachpuff   ;
-    display: flex;
+    background: peachpuff;
     justify-content: space-between;
-    align-items: center;
+    text-align: center;
     z-index: 100;
+    margin-left: 300px;
 }
 
-.logo {
-    font-size: 40px;
-    font-weight: 600;
-    color: #081b29;
-    text-decoration: none;
-    transition: .3s;
-    align-items: center;
-    
-}
 .logo:hover {
     color: cyan;
 }
